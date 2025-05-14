@@ -17,6 +17,13 @@
   width:50%;
 }
 
+textarea {
+    height: 430px;
+    width: 100%;
+    resize: none;
+
+}
+
 nav ul{height:200px;}
 nav ul{overflow:hidden; overflow-y:scroll;}
 </style>
@@ -27,14 +34,14 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   <div>
     <nav>
             <ul style="list-style-type:none;">
-                <li><input type="checkbox" id="mpn" value=" Please fill out your Master Promissory Note online at studentaid.gov">MPN</li>
-                <li><input type="checkbox" id="ec" value= " Please fill out your Entrance Counseling online at studentaid.gov">EC</li>
+                <li><input type="checkbox" id="mpn" value="Please fill out your Master Promissory Note online at studentaid.gov">MPN</li>
+                <li><input type="checkbox" id="ec" value= "Please fill out your Entrance Counseling online at studentaid.gov">EC</li>
 
 
             </ul>
         </nav>
   </div>
-  <div> <p id="combinedText"> </p></div>
+  <div> <textarea id="combinedText"></textarea></textarea> </div>
 
 </div>
 
@@ -47,7 +54,7 @@ function updateCombinedText() {
   let combinedText = "";
   checkboxes.forEach(checkbox => {
     if (checkbox.checked) {
-      combinedText += checkbox.value + " \n "
+      combinedText += checkbox.value + "\n\n"
     }
   });
   combinedTextElement.textContent = combinedText.trim();
