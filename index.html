@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   background-color: indianred;
-  height: 500px
+  height: 500px;
 }
 
 .flex-container > div {
@@ -18,7 +18,7 @@
 }
 
 textarea {
-    height: 430px;
+    height: 370px;
     width: 100%;
     resize: none;
 
@@ -34,6 +34,7 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   <div>
     <nav>
             <ul style="list-style-type:none;">
+                Select All That Apply
                 <li><input type="checkbox" id="mpn" value="Please fill out your Master Promissory Note online at studentaid.gov">MPN</li>
                 <li><input type="checkbox" id="ec" value= "Please fill out your Entrance Counseling online at studentaid.gov">EC</li>
 
@@ -41,7 +42,11 @@ nav ul{overflow:hidden; overflow-y:scroll;}
             </ul>
         </nav>
   </div>
-  <div> <textarea id="combinedText"></textarea></textarea> </div>
+  <div> 
+    Please Review and Copy Below
+    <textarea id="combinedText"></textarea></textarea> 
+<button onclick="myFunction()">Copy text</button>
+</div>
 
 </div>
 
