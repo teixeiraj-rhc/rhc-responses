@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color: indianred;
+  height: 500px
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  width:50%;
+}
+
+nav ul{height:200px;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+</style>
+</head>
 <body>
 
-<h1>My First JavaScript</h1>
+<div class="flex-container">
+  <div>
+    <nav>
+            <ul style="list-style-type:none;">
+                <li><input type="checkbox" id="mpn" value=" Please fill out your Master Promissory Note online at studentaid.gov">MPN</li>
+                <li><input type="checkbox" id="ec" value= " Please fill out your Entrance Counseling online at studentaid.gov">EC</li>
 
 
-    <input type="checkbox" id="scales" name="scales" checked />
-    <label for="scales">Scales</label>
-  
+            </ul>
+        </nav>
+  </div>
+  <div> <p id="combinedText"> </p></div>
+
+</div>
+
+
 <script>
-function myFunction() {
-  document.getElementById("scales").style.fontSize = "25px";      
-}
-</script>
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const combinedTextElement = document.getElementById('combinedText');
 
-<button type="button" onclick="myFunction()">Click Me!</button>
+function updateCombinedText() {
+  let combinedText = "";
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      combinedText += checkbox.value + " \n "
+    }
+  });
+  combinedTextElement.textContent = combinedText.trim();
+}
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', updateCombinedText);
+});
+
+updateCombinedText();
+</script>
 
 </body>
 </html>
+
