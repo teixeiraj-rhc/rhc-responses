@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   background-color: indianred;
-  height: 500px;
+  height: 500px
 }
 
 .flex-container > div {
@@ -44,8 +44,8 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   </div>
   <div> 
     Please Review and Copy Below
-    <textarea id="combinedText"></textarea></textarea> 
-<button onclick="myFunction()">Copy text</button>
+    <textarea id="combinedText"></textarea>
+<button onclick="myFunction()">Copy</button>
 </div>
 
 </div>
@@ -70,6 +70,18 @@ checkboxes.forEach(checkbox => {
 });
 
 updateCombinedText();
+
+function myFunction() {
+
+  var copyText = document.getElementById("combinedText");
+
+ 
+  copyText.select();
+  
+   
+  navigator.clipboard.writeText(copyText.value);
+
+}
 </script>
 
 </body>
